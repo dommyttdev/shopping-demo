@@ -1,10 +1,10 @@
-package com.dommy.shopping.api.merchandise;
+package com.dommy.shopping.merchandise.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MerchandiseApplicationTests {
+class MerchandiseApiApplicationTests {
 
 	@Test
 	void contextLoads() {
