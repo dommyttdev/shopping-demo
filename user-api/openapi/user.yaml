@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Swagger merchandise
+  license:
+    name: MIT
+servers:
+  - url: http://localhost:5002/v1
+paths:
+  /user:
+    get:
+      summary: Hello world
+      operationId: testUser
+      tags:
+        - test
+      responses:
+        '200':
+          description: Hello world
+          headers:
+            x-next:
+              description: A link to the next page of responses
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TestUser'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    TestUser:
+      type: object
+      properties:
+        name:
+          type: string
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
