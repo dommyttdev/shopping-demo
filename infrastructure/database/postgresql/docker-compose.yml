@@ -12,7 +12,7 @@ services:
     ports:
       - "5001:5432"
     volumes:
-      - db-store:/var/lib/postgresql/data
+      - merchandise-api-db-store:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -32,5 +32,5 @@ services:
       POSTGRES_PASSWORD: postgres
 
 volumes:
-  db-store:
+  merchandise-api-db-store:
   user-api-db-store:
