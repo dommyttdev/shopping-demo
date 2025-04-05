@@ -28,20 +28,21 @@
 - CI/CDツールによる自動化
 
 ## 技術選定
-- 言語/フレームワーク
-  - Java / Spring Boot
-- DB
-  - RDBMS: PostgreSQL
-  - NoSQL: MongoDB
-- インフラ
-  - ホスティング: ```未定```
-  - DNS: Cloudflare
-  - CDN: Cloudflare
-  - 仮想化: Docker
-  - クラスタ: Kubernetes
-- マイクロサービス
-  - API Gateway: Istio
-  - メッセージング: Kafka
+| 大分類        | 小分類         | 選定技術                 |
+|------------|-------------|----------------------|
+| 言語/フレームワーク | API         | Java / Spring boot   |
+|            | Webサイト      | TypeScript / Next.js |
+| DB         | マスタ系        | PostgreSQL           |
+|            | トランザクション系   | MongoDB              |
+| インフラ       | DNS         | Cloudflare           |
+|            | CDN         | Cloudflare           |
+|            | ホスティング      | ```未定```             |
+|            | 仮想化         | Docker               |
+|            | クラスタリング     | Kubernates           |
+| マイクロサービス   | サービスメッシュ    | Istio                |
+|            | API間メッセージング | Kafka                |
+|            | メッシュ管理      | Kiali                |
+| その他        | ユーザ認証       | Amazon Cognito       |
 
 
 ## 設計
