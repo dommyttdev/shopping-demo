@@ -40,7 +40,7 @@ tasks.named('test') {
 
 openApiGenerate {
 	generatorName = "spring"
-	inputSpec = "$rootDir/openapi/merchandise.yaml".toString()
+	inputSpec = "$rootDir/src/main/resources/openapi/api.yaml".toString()
 	outputDir = layout.buildDirectory.dir("generated").get().asFile.path
 	apiPackage = "com.dommy.shopping.merchandise.api"
 	invokerPackage = "com.dommy.shopping.merchandise.api.invoker"
