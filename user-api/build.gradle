@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.4.4'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'org.openapi.generator' version '7.12.0'
 }
 
 group = 'com.dommy.shopping'
@@ -26,13 +27,51 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.6'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'com.google.code.findbugs:jsr305:3.0.2'
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml'
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+	implementation 'com.fasterxml.jackson.core:jackson-databind'
+	implementation 'org.openapitools:jackson-databind-nullable:0.2.6'
 	runtimeOnly 'org.postgresql:postgresql'
-	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	compileOnly 'org.projectlombok:lombok'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+openApiGenerate {
+	generatorName = "spring"
+	inputSpec = "$rootDir/src/main/resources/openapi/api.yaml".toString()
+	outputDir = layout.buildDirectory.dir("generated").get().asFile.path
+	apiPackage = "com.dommy.shopping.user.api"
+	invokerPackage = "com.dommy.shopping.user.api.invoker"
+	modelPackage = "com.dommy.shopping.user.api.model"
+	generateModelTests = false
+	generateApiTests = false
+	generateModelDocumentation = false
+	generateApiDocumentation = false
+	// https://openapi-generator.tech/docs/generators/spring
+	configOptions = [
+			dataLibrary          : "java8",
+			documentationProvider: "springdoc",
+			interfaceOnly        : "true",
+			skipDefaultInterface : "true",
+			useSpringBoot3 : "true",
+			useJakartaEe : "true",
+	]
+}
+
+compileJava.dependsOn tasks.openApiGenerate
+
+sourceSets {
+	main {
+		java {
+			srcDir "${openApiGenerate.outputDir.get()}/src/main/java"
+		}
+	}
 }
