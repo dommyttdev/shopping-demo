@@ -1,8 +1,8 @@
-package com.dommy.shopping.user.api.controller;
+package com.dommy.shopping.api.user.controller;
 
 
-import com.dommy.shopping.user.api.UserApi;
-import com.dommy.shopping.user.api.model.TestUser;
+import com.dommy.shopping.api.user.UserApi;
+import com.dommy.shopping.api.user.model.TestUser;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 

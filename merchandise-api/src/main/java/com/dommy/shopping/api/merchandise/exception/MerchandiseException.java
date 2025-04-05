@@ -1,6 +1,6 @@
-package com.dommy.shopping.merchandise.api.exception;
+package com.dommy.shopping.api.merchandise.exception;
 
-import com.dommy.shopping.merchandise.api.model.Error;
+import com.dommy.shopping.api.merchandise.model.Error;
 import lombok.Getter;
 
 @Getter
