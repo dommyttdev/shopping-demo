@@ -47,7 +47,7 @@
 ## 設計
 詳細は[Doc](./doc/index.md)を参照
 ### システム構成
-![システム構成図](./doc/img/SystemDiagram.jpg)
+![システム構成図](./doc/basic_design/img/SystemDiagram.jpg)
 
 ## 課題
 - 認証・認可周り
