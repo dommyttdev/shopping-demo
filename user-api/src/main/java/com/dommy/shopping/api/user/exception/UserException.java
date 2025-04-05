@@ -1,7 +1,7 @@
-package com.dommy.shopping.user.api.exception;
+package com.dommy.shopping.api.user.exception;
 
 
-import com.dommy.shopping.user.api.model.Error;
+import com.dommy.shopping.api.user.model.Error;
 import lombok.Getter;
 
 @Getter

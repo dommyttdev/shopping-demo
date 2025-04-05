@@ -48,9 +48,9 @@ openApiGenerate {
 	generatorName = "spring"
 	inputSpec = "$rootDir/src/main/resources/openapi/api.yaml".toString()
 	outputDir = layout.buildDirectory.dir("generated").get().asFile.path
-	apiPackage = "com.dommy.shopping.user.api"
-	invokerPackage = "com.dommy.shopping.user.api.invoker"
-	modelPackage = "com.dommy.shopping.user.api.model"
+	apiPackage = "com.dommy.shopping.api.user"
+	invokerPackage = "com.dommy.shopping.api.user.invoker"
+	modelPackage = "com.dommy.shopping.api.user.model"
 	generateModelTests = false
 	generateApiTests = false
 	generateModelDocumentation = false

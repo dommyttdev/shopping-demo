@@ -1,4 +1,4 @@
-package com.dommy.shopping.merchandise.api;
+package com.dommy.shopping.api.merchandise;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,11 +1,10 @@
-package com.dommy.shopping.merchandise.api.controller;
+package com.dommy.shopping.api.merchandise.controller;
 
-import com.dommy.shopping.merchandise.api.MerchandiseApi;
-import com.dommy.shopping.merchandise.api.model.TestMerchandise;
+import com.dommy.shopping.api.merchandise.MerchandiseApi;
+import com.dommy.shopping.api.merchandise.model.TestMerchandise;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
 
 @RestController
 public class TestController implements MerchandiseApi {
