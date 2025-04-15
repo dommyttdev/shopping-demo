@@ -24,25 +24,28 @@
 
 ### 運用面
 - k8sでのクラスタリング
-- GCP, AWS, OCIなどいずれかでのホスティング
+- ~~GCP, AWS, OCIなどいずれかでのホスティング~~
+  - コストの面から撤回
+  - Proxmoxによる自宅サーバでの公開（インフラの勉強にもなる）
+    - セキュリティの観点からCloudflare経由での公開とする
 - CI/CDツールによる自動化
 
 ## 技術選定
-| 大分類        | 小分類         | 選定技術                 |
-|------------|-------------|----------------------|
-| 言語/フレームワーク | API         | Java / Spring boot   |
-|            | Webサイト      | TypeScript / Next.js |
-| DB         | マスタ系        | PostgreSQL           |
-|            | トランザクション系   | MongoDB              |
-| インフラ       | DNS         | Cloudflare           |
-|            | CDN         | Cloudflare           |
-|            | ホスティング      | ```未定```             |
-|            | 仮想化         | Docker               |
-|            | クラスタリング     | Kubernates           |
-| マイクロサービス   | サービスメッシュ    | Istio                |
-|            | API間メッセージング | Kafka                |
-|            | メッシュ管理      | Kiali                |
-| その他        | ユーザ認証       | Amazon Cognito       |
+| 大分類        | 小分類         | 選定技術                                         |
+|------------|-------------|----------------------------------------------|
+| 言語/フレームワーク | API         | Java / Spring boot                           |
+|            | Webサイト      | TypeScript / Next.js                         |
+| DB         | マスタ系        | PostgreSQL                                   |
+|            | トランザクション系   | MongoDB                                      |
+| インフラ       | DNS         | Cloudflare                                   |
+|            | CDN         | Cloudflare                                   |
+|            | ホスティング      | ```未定```                                     |
+|            | 仮想化         | ~~Docker~~<br> containerd (k8sでDocker非推奨のため) |
+|            | クラスタリング     | Kubernetes                                   |
+| マイクロサービス   | サービスメッシュ    | Istio                                        |
+|            | API間メッセージング | Kafka                                        |
+|            | メッシュ管理      | Kiali                                        |
+| その他        | ユーザ認証       | Amazon Cognito                               |
 
 
 ## 設計
